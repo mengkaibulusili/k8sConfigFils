@@ -1,0 +1,15 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    # 固定端口数值，必须是配置文件范围内
+    nodePort: 30100
+  type: NodePort
+  selector:
+    app: nginx
